@@ -12,7 +12,24 @@
 # Make func3 print:
 # "Howdeeeee"
 # Put your code here:
+def func1():
+    print "Hello World"
+var1 = func1
 
+def func2():
+    print "It's nice to meet you"
+var2 = func2
+
+def func3():
+    print "Howdeeeee"
+var3 = func3
+
+def using_functions(x, y, z):
+    x()
+    y()
+    z()
+
+using_functions(var1, var2, var3)
 
 # Now, make a new function called `using_functions`.
 # Make it take three arguments (name the arguments as you see fit)
