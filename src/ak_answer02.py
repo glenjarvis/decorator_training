@@ -1,62 +1,39 @@
 #!/usr/bin/env python
 
-
-# Now that you understand that functions can be passed around as arguments
-# (just like any other object), you're ready for the next step.
-
-
-# First step.
-# In the space below, create a function called `log_fruit`. This function
-# should take an argument of `some_func`.
-# On the first line of the function, place this code:
-# `print "Hey, I am going to run this function ", some_func`
-# And, on the second line, call the function `some_func` (like we did in the
-# previous exercise)
-
 def log_fruit(some_func):
     print("Hey, I am going to run this function", some_func)
     some_func()
 
-
-
-
-# Second step
-# In the space below,
-# Define a function `apples`.
-# On the first line of this function, use this line:
-# `print "I like apples"`
-
 def apples():
     print("I like apples")
 
+log_fruit(apples)
 
-
-
-# Third step
-# In the space below, call the function `log_fruit` and pass in `apples` as an
-# argument to the `log_fruit` function.
-# Run this program and review the results
-
-
-if __name__ == "__main__":
-    log_fruit(apples)
-
-
-# Final step
-# In the space below, write a function called `pears`.
-# In the first line of the function write this code:
-# `print "I am a pear"`
-# DIRECTLY ABOVE (the line before your `def pears():`
-# type this:
-# `@log_fruit`
-# Run the program and review the results
-
-
-
-
+@log_fruit
+def pears():
+    print("I am a pear")
 
 # Answer these two questions:
 # 1) How are these two examples that are printed (apples and pears) the same
 #    (if at all)? 
+They are both the result of running log_fruit
+
 # 2) How are these two examples that are printed (apples and
 #    pears) different (if at all)?
+
+output = """
+('Hey, I am going to run this function', <function apples at 0xb729a1b4>)
+I like apples
+('Hey, I am going to run this function', <function pears at 0xb729a3ac>)
+I am a pear
+"""
+Answer = """
+One (the first, apples) results from log_fruit running the apples function,
+The second (pear) results from log_fruit running the pear function.
+
+Question still on the table: how does this syntax contribute anything?
+Would it have not been simpler to remove @log_fruit from before the
+'pears' function definitiong and call log_fruit(pears) after definining
+pears?
+"""
+

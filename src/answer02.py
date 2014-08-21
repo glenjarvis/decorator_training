@@ -13,7 +13,9 @@
 # And, on the second line, call the function `some_func` (like we did in the
 # previous exercise)
 
-
+def log_fruit(some_func):
+    print("Hey, I am going to run this function", some_func)
+    some_func()
 
 
 
@@ -24,7 +26,8 @@
 # On the first line of this function, use this line:
 # `print "I like apples"`
 
-
+def apples():
+    print("I like apples")
 
 
 
@@ -35,7 +38,8 @@
 # Run this program and review the results
 
 
-
+if __name__ == "__main__":
+    log_fruit(apples)
 
 
 # Final step
